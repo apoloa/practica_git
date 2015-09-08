@@ -6,11 +6,11 @@
 	```
 	git reset --hard HEAD~1
 	```
-	 Empleo este comando por que es el unico que permite mover el puntero de la rama donde estoy al punto donde quiera. Empleando el atriburo *--hard* me permite modificar el *working copy*. **HEAD~1** Me permite restar un commit a la posición **HEAD**. En resumen este comando me permite mover el puntero **HEAD** y el puntero de la rama a una posicion predeterminada en este caso la posición del **HEAD-1**. 
+	 Empleo este comando por que es el único que permite mover el puntero de la rama donde estoy al punto donde quiera. Empleando el atriburo *--hard* me permite modificar el *working copy*. **HEAD~1** me permite restar un commit a la posición **HEAD**. En resumen este comando me permite mover el puntero **HEAD** y el puntero de la rama a una posicion predeterminada en este caso la posición del **HEAD-1**. 
 
 2. **¿Qué comando o comandos utilizaste en el paso 12? ¿Por qué?**
 	
-	Para poder recuperar los cambios que hemos deshecho. Es necesario recuperar el hash del ultimo commit. Cada commit tiene un hash SHA1 que lo identifica de forma unica. Para ello primeramente he empleado el comando:
+	Para poder recuperar los cambios que hemos deshecho. Es necesario recuperar el hash del ultimo commit. Cada commit tiene un hash SHA1 que lo identifica de forma única. Para ello primeramente he empleado el comando:
 	
 	```
 	git reflog
@@ -29,7 +29,7 @@
 	```
 	git reset --hard 277f84d
 	```
-	El comando reset aparte de adminitir posiciones sobre **HEAD** también admite hash.
+	El comando reset aparte de admitir posiciones sobre **HEAD** también admite hash.
 
 3. **El merge del paso 13, ¿Causó algún conflicto? ¿Por qué?**
 
@@ -38,7 +38,7 @@
 	```
 	git merge master 
 	```
-	El porque no causa ningún error es que no se puede hacer un merge de **htmlify** a **master** ya que **htmlify** ya contine lo que tiene **master** por eso el mensaje que sale es:
+	El porque no causa ningún error es que no se puede hacer un merge de **htmlify** a **master** ya que **htmlify** ya contiene lo que tiene **master** por eso el mensaje que sale es:
 	
 	> Already up-to-date.
 	
@@ -52,7 +52,7 @@
 	git merge matrix
 	```
 	
-	Si generan conflictos, aunque git es bastante inteligente a la hora de crear y eliminar filas, no es capaz de hacerlo cuando se modifican en las dos ramas las mismas lineas, por esa razón debemos modificar los conflictos a mano. En este estado Git se queda realizando el merge a la espare que hagamos un commit con los cambios resueltos. 
+	Si generan conflictos, aunque git es bastante inteligente a la hora de crear y eliminar filas, no es capaz de hacerlo cuando se modifican en las dos ramas las mismas líneas, por esa razón debemos modificar los conflictos a mano. En este estado Git se queda realizando el merge a la espera que hagamos un commit con los cambios resueltos. 
 
 5. **El merge del paso 21, ¿Causó algún conflicto? ¿Por qué?**
 
@@ -61,7 +61,7 @@
 	```	
 	git merge htmlify
 	```
-	No causa ningun conflicto ya que el merge que esta realizando es un *fast forward* quiere decir que el grafo de git se puede simplificar en una lista, por lo tanto para realizar el *merge* lo unico que debemos hacer es mover la *branch* de master a htmlify, quedando master y htmlify en el mismo *commit* 
+	No causa ningún conflicto ya que el merge que esta realizando es un *fast forward* quiere decir que el grafo de git se puede simplificar en una lista, por lo tanto para realizar el *merge* lo único que debemos hacer es mover la *branch* de master a htmlify, quedando master y htmlify en el mismo *commit* 
 
 6. **¿Qué comando o comandos utilizaste en el paso 25?**
 
@@ -91,7 +91,7 @@
 
 7. **El merge del paso 26, ¿Podría ser fast forward? ¿Por qué?**
 
-	Si podria ser *fast forward*, la razon de ello es que se pueden traducir el grafo de git como una lista. Solo añadiendo los *hunks* del title quedaria modificado el head. 
+	Si podría ser *fast forward*, la razón de ello es que se pueden traducir el grafo de git como una lista. Solo añadiendo los *hunks* del title quedaria modificado el head. 
 	
 	<pre>
 	·   79bf1ba0377ee3c44b200ed962480bbdf9de992c (HEAD -> master) Merge branch 'title'
@@ -112,7 +112,7 @@
 	git merge title
 	```
 	
-	Git realizaria el siguiente proceso y quedaria este grafo el cual esta realizado de manera fast forward:
+	Git realizaría el siguiente proceso y quedaría este grafo el cual esta realizado de manera fast forward:
 	<pre>
 	· 7884d58c33065284517d4f07118bd79a6b0e6445 (HEAD -> master,title) Añado titulo al poema
 	|
@@ -132,7 +132,7 @@
 	git reset HEAD~1
 	```
 	
-	En este paso debemos obiar el parametro *--hard* por que queremos mantener el los cambios del *working copy*. El comando es *HEAD~1* por que sin nos fijamos en el grafo debemos reducir el paso anterior
+	En este paso debemos obviar el parámetro *--hard* por que queremos mantener el los cambios del *working copy*. El comando es *HEAD~1* por que sin nos fijamos en el grafo debemos reducir el paso anterior
 	<pre>
 	·   79bf1ba0377ee3c44b200ed962480bbdf9de992c (HEAD -> master) Merge branch 'title'
 	|\
@@ -185,7 +185,7 @@
 	git branch -D title
 	```
 	
-	Dicho comando borra la rama, pero no es un borrado normal sino un borrado forzoso ya que si se realia este comando con el parametro *-d* no borrara la rama por que no esta mergueada y podriamos perder datos.
+	Dicho comando borra la rama, pero no es un borrado normal sino un borrado forzoso ya que si se realiza este comando con el parámetro *-d* no borrara la rama por que no esta mergueada y podríamos perder datos.
 
 11. **¿Qué comando o comandos utilizaste en el paso 30?**
 
@@ -220,7 +220,7 @@
 	
 	> 79bf1ba HEAD@{1}: merge title: Merge made by the 'recursive' strategy.
 	
-	Si despues ejecutamos el comando *reset* y movernos a dicho commit.
+	Si después ejecutamos el comando *reset* y movernos a dicho commit.
 	
 	```
 	git reset --hard 79bf1ba
@@ -337,7 +337,7 @@
 	c6649dd HEAD@{20}: commit (initial): Añadido poem
 	```
 	
-	Una vez realizado debemos emplear logica para descubrir en que accion debemos recuperar, si miramos el log podemos ver que nos hemos movidocuando hemos empleado el merge era el hash **79bf1ba**, por esa razón una vez realizado el *reset* a dicha posicion tendremos el estado anterior: 
+	Una vez realizado debemos emplear lógica para descubrir en que acción debemos recuperar, si miramos el log podemos ver que nos hemos movido cuando hemos empleado el merge era el hash **79bf1ba**, por esa razón una vez realizado el *reset* a dicha posición tendremos el estado anterior: 
 	
 	```
 	git reset --hard 79bf1ba
